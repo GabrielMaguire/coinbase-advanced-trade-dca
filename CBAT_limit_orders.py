@@ -72,7 +72,16 @@ def placeLimitOrder(side, pair, size, limit_price):
         }
         })        
     coinbase_request(method,path,payload)
- 
+
+#Use this function to get all available product info
+def getProductInfo():
+    method = Method.GET.name
+    path = f'/api/v3/brokerage/products'
+    payload = ''
+    response = coinbase_request(method,path,payload)
+    for product in response['products']:
+        print(product['product_id'])
+        
 def getProductInfo(pair):
     method = Method.GET.name
     path = f'/api/v3/brokerage/products/{pair}'

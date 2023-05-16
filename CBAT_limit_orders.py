@@ -108,7 +108,7 @@ def lambda_handler(event, context):
     my_side = Side.BUY.name
     my_trading_pair = "BTC-USD"
     usd_order_size = 10
-    factor = .998 if my_side == Side.SELL.name else 1.002
+    factor = .998 if my_side == Side.BUY.name else 1.002
 
     product_info = getProductInfo(my_trading_pair)
     
